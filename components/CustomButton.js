@@ -7,6 +7,8 @@ export default class CustomButton extends HTMLElement {
       console.log('You clicked me!');
     };
 
+    const buttonText = this.getAttribute('data-text');
+
     this.shadowRoot.innerHTML = `
       <style>
         :host {
@@ -31,7 +33,7 @@ export default class CustomButton extends HTMLElement {
           color: red;
         }
       </style>
-      <button>Button</button>
+      <button>${buttonText}</button>
     `;
   }
 }
